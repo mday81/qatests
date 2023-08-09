@@ -12,6 +12,18 @@ jobs:
         run: |
           echo "payload Foo '${{ github.event.client_payload.foo }}'"
 
+      - name: Checkout
+        uses: actions/checkout@v3
+
+        # Set up Node.js
+      - name: Node.js Set up
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+        # Install Node.js dependencies
+      - name: Node.js dependencies
+        run: npm install
       # Run Unit tests and Coverage
       - name: Unit Tests and Coverage
         run: |
