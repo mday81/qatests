@@ -4,7 +4,7 @@ on:
       - main
   workflow_dispatch:
     inputs:
-      API_URL:
+      stage:
         required: true
         default: https://example.com
 
