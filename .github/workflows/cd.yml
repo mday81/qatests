@@ -7,14 +7,13 @@ on:
       API_URL:
         required: true
         default: https://example.com
+
+env:
+  STAGE: ${{ inputs.stage || 'dev' }}
+  
 jobs:
   build:
-    env:
-      API_URL: ${{ github.event.inputs.API_URL }}
     runs-on: ubuntu-latest
     steps:
-      - name: Set API_URL environment variable
-        if: env.API_URL == null
-        run: echo "API_URL=https://example.com" >> $GITHUB_ENV
       - name: Test API_URL environment variable
-        run: echo "API_URL=$API_URL"
+        run: echo "stage=$env.STAGE"
