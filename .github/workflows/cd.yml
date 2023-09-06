@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test API_URL environment variable
-        run: echo "stage=$env.STAGE"
+        run: echo stage  ${{ inputs.stage }}
