@@ -11,11 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Deploy $env.STAGE
-    env:
-      STAGE: ${{ inputs.stage || 'dev' }}
+    name: Deploy ${{ inputs.stage || 'dev' }}
     environment:
-      name: ${{ env.STAGE }}
+      name: ${{ inputs.stage || 'dev' }}
     steps:
       - name: Test API_URL environment variable
-        run: echo stage  ${{ env.STAGE }}
+        run: echo stage  ${{ inputs.stage || 'dev' }}
