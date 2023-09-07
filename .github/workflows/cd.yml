@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy $env.STAGE
     environment:
-      name: ${{ env.STAGE }}
+      name: ${{ STAGE }}
     steps:
       - name: Test API_URL environment variable
         run: echo stage  ${{ env.STAGE }}
