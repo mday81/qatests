@@ -15,7 +15,7 @@ jobs:
     env:
       STAGE: ${{ inputs.stage || 'dev' }}
     environment:
-      name: ${{ STAGE }}
+      name: ${{ env.STAGE }}
     steps:
       - name: Test API_URL environment variable
         run: echo stage  ${{ env.STAGE }}
