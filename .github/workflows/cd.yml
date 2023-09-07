@@ -7,14 +7,13 @@ on:
       stage:
         required: true
         default: https://example.com
-
-env:
-  STAGE: ${{ inputs.stage || 'dev' }}
   
 jobs:
   build:
     runs-on: ubuntu-latest
     name: Deploy $env.STAGE
+    env:
+      STAGE: ${{ inputs.stage || 'dev' }}
     environment:
       name: ${{ STAGE }}
     steps:
